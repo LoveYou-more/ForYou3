@@ -6,6 +6,10 @@
   <title>Kita Berdua</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #ffdce0, #ffe7fa);
+    }
     canvas {
       position: fixed;
       top: 0;
@@ -13,63 +17,69 @@
       pointer-events: none;
       z-index: -1;
     }
+    .card {
+      border: 4px dashed #ff90b3;
+      background-color: #fff0f5;
+    }
   </style>
 </head>
-<body class="bg-pink-200 text-gray-800">
+<body class="text-gray-800">
 
   <!-- Canvas Hati -->
   <canvas id="heartCanvas"></canvas>
 
-  <div class="container mx-auto p-4 space-y-8">
-    <h1 class="text-4xl font-bold text-center text-pink-600">💑 Kita Berdua</h1>
+  <div class="max-w-3xl mx-auto p-6 space-y-10">
+    <h1 class="text-5xl font-extrabold text-center text-pink-500 drop-shadow">Kita Berdua</h1>
 
     <!-- Durasi Berpacaran -->
-    <div class="bg-white rounded-2xl shadow-md p-6 text-center">
-      <h2 class="text-2xl font-semibold">Sudah Berpacaran Selama</h2>
-      <p id="duration" class="text-3xl text-pink-500 mt-2"></p>
+    <div class="card rounded-3xl p-6 text-center shadow-lg">
+      <h2 class="text-2xl font-bold text-pink-700">Sudah Bersama Selama</h2>
+      <p id="duration" class="text-4xl text-pink-500 mt-2 font-bold"></p>
     </div>
 
     <!-- Lagu Kesukaan -->
-    <div class="bg-white rounded-2xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-2">🎵 Lagu Kesukaan Kita</h2>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://open.spotify.com/embed/track/5nTtCOCds6I0PHMNtqelas?utm_source=generator"></iframe>
+    <div class="card rounded-3xl p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-pink-600 mb-2">Lagu Kesukaan Kita</h2>
+      <div class="rounded-2xl overflow-hidden border-4 border-pink-200">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://open.spotify.com/embed/track/5nTtCOCds6I0PHMNtqelas?utm_source=generator"></iframe>
+      </div>
     </div>
 
     <!-- Galeri Foto -->
-    <div class="bg-white rounded-2xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-4">📸 Galeri Kenangan</h2>
+    <div class="card rounded-3xl p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-pink-600 mb-4">Galeri Kenangan Kita</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="foto1.jpg" class="rounded-xl aspect-square">
-        <img src="foto2.jpg" class="rounded-xl aspect-square">
-        <img src="foto3.jpg" class="rounded-xl aspect-square">
-        <img src="foto4.jpg" class="rounded-xl aspect-square">
+        <img src="foto1.jpg" class="rounded-2xl aspect-square border-4 border-pink-300">
+        <img src="foto2.jpg" class="rounded-2xl aspect-square border-4 border-pink-300">
+        <img src="foto3.jpg" class="rounded-2xl aspect-square border-4 border-pink-300">
+        <img src="foto4.jpg" class="rounded-2xl aspect-square border-4 border-pink-300">
       </div>
     </div>
 
     <!-- Foto Favorit -->
-    <div class="bg-white rounded-2xl shadow-md p-6 text-center">
-      <h2 class="text-xl font-semibold">❤️ Foto Kesukaan</h2>
-      <img src="foto4.jpg" class="rounded-xl mx-auto mt-4">
+    <div class="card rounded-3xl p-6 shadow-lg text-center">
+      <h2 class="text-xl font-bold text-pink-600">Foto Favorit Kita</h2>
+      <img src="foto4.jpg" class="rounded-2xl mx-auto mt-4 border-4 border-pink-400">
     </div>
 
     <!-- Chat Pertama -->
-    <div class="bg-white rounded-2xl shadow-md p-6">
-      <h2 class="text-xl font-semibold mb-2">💬 Chat Pertama Kita</h2>
-      <div class="bg-gray-100 p-4 rounded-xl space-y-2 text-sm">
-        <p><strong>Kamu:</strong> Hai, boleh kenalan?</p>
-        <p><strong>Dia:</strong> Boleh dong 😊</p>
+    <div class="card rounded-3xl p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-pink-600 mb-2">Chat Pertama Kita</h2>
+      <div class="bg-pink-100 p-4 rounded-2xl space-y-2 text-sm border-2 border-pink-300">
+        <p><strong class="text-pink-700">Kamu:</strong> Hai, boleh kenalan?</p>
+        <p><strong class="text-pink-700">Dia:</strong> Boleh dong 😊</p>
       </div>
     </div>
   </div>
 
   <!-- Script Durasi -->
   <script>
-    const startDate = new Date("2021-10-01"); // Ganti dengan tanggal jadianmu
+    const startDate = new Date("2021-10-01");
     const now = new Date();
     const diffTime = Math.abs(now - startDate);
     const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById("duration").innerText = `${days} hari 💖`;
+    document.getElementById("duration").innerText = `${days} hari bersama 💖`;
   </script>
 
   <!-- Script Hati Jatuh -->
